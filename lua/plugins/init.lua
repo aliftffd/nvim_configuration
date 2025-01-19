@@ -33,10 +33,10 @@ return {
   -- Java support
   {
     "mfussenegger/nvim-jdtls",
-    ft = "java",
-    config = function()
-      require("plugins-jdtls").setup()
-    end,
+    ft = "java"
+   -- config = function()
+      --require("plugins-jdtls").setup()
+    --end,
   },
 
   -- Python support
