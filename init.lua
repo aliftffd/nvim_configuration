@@ -1,9 +1,11 @@
-vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
-vim.g.mapleader = " "
--- For Lua configuration (init.lua)
+-- Disable VenvSelect upgrade warning
 vim.g.venvselect_stay_on_this_version = true
 
--- bootstrap lazy and all plugins
+-- Base46 and leader key settings
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
+vim.g.mapleader = " "
+
+-- Bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
 if not vim.uv.fs_stat(lazypath) then
@@ -15,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy_config = require "configs.lazy"
 
--- load plugins
+-- Load plugins
 require("lazy").setup({
   {
     "NvChad/NvChad",
@@ -27,7 +29,7 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
--- load theme
+-- Load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
